@@ -62,7 +62,7 @@ module Graphql
       end
 
       def parent_name
-        require File.expand_path("config/application", destination_root)
+        require File.expand_path(Rails.root.join("config", "application").to_s, destination_root)
         if Rails.application.class.respond_to?(:module_parent_name)
           Rails.application.class.module_parent_name
         else
